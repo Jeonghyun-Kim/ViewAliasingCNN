@@ -1,2 +1,3 @@
 *.npy
 jupyter_start.bat
+.ipynb_checkpoints
