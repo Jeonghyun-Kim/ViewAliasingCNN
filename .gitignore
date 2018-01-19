@@ -1,3 +1,4 @@
 *.npy
 jupyter_start.bat
 .ipynb_checkpoints
+__pycache__/
