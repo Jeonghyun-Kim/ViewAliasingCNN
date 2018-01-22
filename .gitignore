@@ -1,4 +1,7 @@
 *.npy
+*.mat
+
 jupyter_start.bat
 .ipynb_checkpoints
 __pycache__/
+modelGraph.png
