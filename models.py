@@ -1,8 +1,26 @@
 from keras.applications.vgg16 import VGG16
 from keras.models import Sequential, Model, load_model
-from keras.layers import Activation, BatchNormalization, Conv2D, Conv2DTranspose, Input, concatenate, add, MaxPooling2D, UpSampling2D
+from keras.layers import Activation, BatchNormalization, Conv2D, Conv2DTranspose, Input, concatenate, add, MaxPooling2D, UpSampling2D, Dense, Flatten
 import h5py
 import numpy as np
+
+def CNNClassifier(k):
+    model = Sequential()
+    model.add(Conv2D(k, (3, 3), padding='same', activation='relu', input_shape=input_shape))
+    model.add(Conv2D(k, (3, 3), activation='relu'))
+    # model.add(MaxPooling2D(pool_size=(2, 2)))
+
+    model.add(Conv2D(k, (3, 3), padding='same', activation='relu'))
+    model.add(Conv2D(k, (3, 3), activation='relu'))
+    # model.add(MaxPooling2D(pool_size=(2, 2)))
+
+    model.add(Conv2D(k, (3, 3), padding='same', activation='relu'))
+    model.add(Conv2D(k, (3, 3), activation='relu'))
+    # model.add(MaxPooling2D(pool_size=(2, 2)))
+
+    model.add(Flatten())
+    model.add(Dense(512, activation='relu'))
+    model.add(Dense(nClasses, activation='softmax'))
 
 def DenseResNet14(k):
     # Create Model
